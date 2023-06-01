@@ -38,4 +38,16 @@ sqlite> SELECT snippet_ext(text, 'g', '<b>', '</b>') FROM tbl ;
 
 ho<b>g</b>efu<b>g</b>aho<b>g</b>e
 
+
+
+```
+
+
+```
+sqlite> CREATE  TABLE books (id, title, text);
+sqlite> INSERT  INTO books VALUES ( 0, "Search system", "Guide book for search devs");
+
+sqlite> SELECT id, snippet_ext(title, 'Search', '<h1>', '</h1>'), snippet_ext(text , 'search', '<b>', '</b>') FROM books ;
+0|<h1>Search</h1> system|Guide book for <b>search</b> devs
+
 ```
